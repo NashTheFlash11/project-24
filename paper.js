@@ -6,6 +6,9 @@ class Paper{
             friction: 0.5,
             density: 1.2
         }
+        this.body = Bodies.circle(x, y, radius, options);
+        this.radius = radius;
+        World.add(world, this.body);
     }
 
     display() {
@@ -14,8 +17,9 @@ class Paper{
         push();
         translate(pos.x, pos.y);
         rotate(angle);
-        imageMode(CENTER);
-        image(0,0, this.radius);
+        fill("pink");
+        ellipseMode(CENTER);
+        ellipse(0,0, this.radius);
         pop();
-        }
+    }
 }

@@ -4,11 +4,6 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
-// function preload()
-// {
-
-// }
-
 function setup() {
 	createCanvas(800, 700);
 
@@ -19,11 +14,11 @@ function setup() {
 	//Create the Bodies Here.
 	ground = new Ground(600,height,1200,20);
 
-	paper = new Paper(200, 650, 20);
-	
-	dustbinBottom = new Dustbin(600, 650, 200, 20);
-	dustbinRightSide = new Dustbin(700, 610, 20, 100);
-	dustbinLeftSide = new Dustbin(500, 610, 20, 100);
+	paper = new Paper(125, 698, 20);
+	  
+	trashCanBottom = new Dustbin(625, 680, 115, 20);
+	trashCanLeft = new Dustbin(558, 638, 20, 105);
+	trashCanRight = new Dustbin(680, 638, 20, 105);
 
 	Engine.run(engine);
   
@@ -39,17 +34,17 @@ function draw() {
 
   paper.display();
 
-  dustbinBottom.display();
-  dustbinLeftSide.display();
-  dustbinRightSide.display();
-  
+  trashCanBottom.display();
+  trashCanLeft.display();
+  trashCanRight.display();
+
   drawSprites();
  
 }
 
 function keyPressed(){
 	if(keyCode === UP_ARROW){
-		Matter.Body.applyForce(paper.body, paper.body.position,{x:85, y:-85});
+		Matter.Body.applyForce(paper.body, paper.body.position,{x:60, y:-60});
 	}
 }
 
